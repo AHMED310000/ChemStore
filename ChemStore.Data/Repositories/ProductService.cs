@@ -6,7 +6,7 @@ namespace ChemStore.Services;
 
 public class ProductService : IProductService
 {
-    private readonly IGenericRepository<Product> _repository;
+    private readonly IProductRepository _repository;
 
     public ProductService(IGenericRepository<Product> repository)
     {
@@ -46,8 +46,10 @@ public class ProductService : IProductService
         await _repository.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<Product>> SearchAsync(string keyword)
-    {
+   public async Task<IEnumerable<Product>> SearchAsync(string keyword)
+{
+    return await _repository.SearchAsync(keyword);
+}
         keyword = keyword.ToLower();
 
         return await _repository.FindAsync(x =>
