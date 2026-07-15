@@ -1,0 +1,12 @@
+namespace ChemStore.Core.Entities;
+
+public class Warehouse : BaseEntity
+{
+    public string Code { get; set; } = string.Empty;
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? Address { get; set; }
+
+    public bool IsMainWarehouse { get; set; }
+}
