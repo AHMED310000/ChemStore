@@ -1,18 +1,14 @@
 using ChemStore.Core.Entities;
 
-namespace ChemStore.Services.Interfaces;
+namespace ChemStore.Data.Repositories;
 
-public interface IProductService
+public interface IProductRepository : IGenericRepository<Product>
 {
-    Task<IEnumerable<Product>> GetAllAsync();
-
-    Task<Product?> GetByIdAsync(int id);
-
-    Task AddAsync(Product product);
-
-    Task UpdateAsync(Product product);
-
-    Task DeleteAsync(int id);
-
     Task<IEnumerable<Product>> SearchAsync(string keyword);
+
+    Task<IEnumerable<Product>> GetLowStockProductsAsync();
+
+    Task<Product?> GetByCodeAsync(string code);
+
+    Task<Product?> GetByBarcodeAsync(string barcode);
 }
