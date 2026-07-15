@@ -1,10 +1,19 @@
+namespace ChemStore.Core.Entities;
+
 public class ProductPrice : BaseEntity
 {
     public int ProductUnitId { get; set; }
 
     public ProductUnit ProductUnit { get; set; } = null!;
 
-    public string PriceName { get; set; } = string.Empty;
+    // Retail - HalfWholesale - Wholesale - Special...
+    public string PriceType { get; set; } = string.Empty;
 
     public decimal Price { get; set; }
+
+    public DateTime EffectiveFrom { get; set; } = DateTime.Today;
+
+    public DateTime? EffectiveTo { get; set; }
+
+    public bool IsActive { get; set; } = true;
 }
