@@ -17,7 +17,6 @@ public class Product : BaseEntity
 
     public decimal AverageCost { get; set; }
 
-
     public decimal MinimumStock { get; set; }
 
     public bool IsActive { get; set; } = true;
