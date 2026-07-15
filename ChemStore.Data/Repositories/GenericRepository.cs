@@ -53,3 +53,4 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return await _context.SaveChangesAsync();
     }
 }
+refactor: separate product repository from generic repository
