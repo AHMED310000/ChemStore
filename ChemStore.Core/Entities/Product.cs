@@ -15,15 +15,8 @@ public class Product : BaseEntity
   public ICollection<ProductUnit> Units { get; set; }
     = new List<ProductUnit>();
 
-    public decimal PurchasePrice { get; set; }
-
     public decimal AverageCost { get; set; }
 
-    public decimal RetailPrice { get; set; }
-
-    public decimal HalfWholesalePrice { get; set; }
-
-    public decimal WholesalePrice { get; set; }
 
     public decimal MinimumStock { get; set; }
 
