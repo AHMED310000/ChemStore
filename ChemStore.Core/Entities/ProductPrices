@@ -1,0 +1,10 @@
+public class ProductPrice : BaseEntity
+{
+    public int ProductUnitId { get; set; }
+
+    public ProductUnit ProductUnit { get; set; } = null!;
+
+    public string PriceName { get; set; } = string.Empty;
+
+    public decimal Price { get; set; }
+}
