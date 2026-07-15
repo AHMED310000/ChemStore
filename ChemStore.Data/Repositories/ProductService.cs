@@ -58,3 +58,14 @@ public class ProductService : IProductService
             (x.Barcode ?? "").Contains(keyword));
     }
 }
+public decimal ReorderLevel { get; set; }
+
+public decimal MaximumStock { get; set; }
+
+public string? Manufacturer { get; set; }
+
+public string? Brand { get; set; }
+
+public string? ActiveIngredient { get; set; }
+
+public string? PackageSize { get; set; }
