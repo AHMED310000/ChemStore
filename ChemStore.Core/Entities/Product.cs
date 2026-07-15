@@ -12,9 +12,8 @@ public class Product : BaseEntity
 
     public Category Category { get; set; } = null!;
 
-    public int UnitId { get; set; }
-
-    public Unit Unit { get; set; } = null!;
+  public ICollection<ProductUnit> Units { get; set; }
+    = new List<ProductUnit>();
 
     public decimal PurchasePrice { get; set; }
 
