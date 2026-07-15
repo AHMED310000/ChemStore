@@ -12,3 +12,4 @@
 - [ ] Build Sales Module
 - [ ] Build Purchases Module
 - [ ] Build Reports
+Add project documentation
