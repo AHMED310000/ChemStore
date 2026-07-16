@@ -51,3 +51,15 @@ private void AddProduct()
 <Button
     Content="إضافة"
     Command="{Binding AddProductCommand}"/>
+[RelayCommand]
+private void AddProduct()
+{
+    var window = new ProductEditorView();
+
+    window.ShowDialog();
+
+    _ = LoadAsync();
+}
+<Button
+    Content="إضافة"
+    Command="{Binding AddProductCommand}"/>
