@@ -9,3 +9,4 @@ public static class ProductValidator
             throw new Exception("كود الصنف مطلوب");
     }
 }
+ProductValidator.Validate(product);
