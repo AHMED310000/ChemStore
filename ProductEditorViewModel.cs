@@ -48,3 +48,6 @@ private void AddProduct()
 
     _ = LoadAsync();
 }
+<Button
+    Content="إضافة"
+    Command="{Binding AddProductCommand}"/>
