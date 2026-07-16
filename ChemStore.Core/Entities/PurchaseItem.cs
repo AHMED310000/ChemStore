@@ -16,3 +16,6 @@ public class PurchaseItem : BaseEntity
 
     public decimal Total { get; set; }
 }
+public int? BatchId { get; set; }
+
+public Batch? Batch { get; set; }
