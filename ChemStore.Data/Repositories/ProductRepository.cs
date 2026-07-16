@@ -49,3 +49,12 @@ public class ProductRepository : GenericRepository<Product>, IProductRepository
             .ToListAsync();
     }
 }
+public override async Task<List<Product>> GetAllAsync()
+{
+    return await _context.Products
+        .Include(x => x.Category)
+        .Include(x => x.Company)
+        .Where(x => !x.IsDeleted)
+        .OrderBy(x => x.Name)
+        .ToListAsync();
+}
