@@ -26,3 +26,18 @@ public class Product : BaseEntity
     public ICollection<InventoryTransaction> InventoryTransactions { get; set; }
         = new List<InventoryTransaction>();
 }
+public int? CompanyId { get; set; }
+
+public Company? Company { get; set; }
+
+public string? ScientificName { get; set; }
+
+public string? RegistrationNo { get; set; }
+
+public decimal VatRate { get; set; }
+
+public bool AllowNegativeStock { get; set; }
+
+public bool TrackExpiryDate { get; set; }
+
+public bool TrackBatch { get; set; }
