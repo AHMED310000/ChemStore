@@ -20,3 +20,6 @@ public class SaleItem : BaseEntity
 
     public decimal Total { get; set; }
 }
+public int? BatchId { get; set; }
+
+public Batch? Batch { get; set; }
