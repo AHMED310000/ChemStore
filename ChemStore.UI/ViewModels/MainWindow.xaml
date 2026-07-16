@@ -1,0 +1,43 @@
+<DockPanel>
+
+    <Border DockPanel.Dock="Top"
+            Height="55">
+
+        <TextBlock
+            Text="ChemStore ERP"
+            FontSize="24"
+            VerticalAlignment="Center"
+            Margin="20,0"/>
+    </Border>
+
+    <Border DockPanel.Dock="Left"
+            Width="230">
+
+        <StackPanel>
+
+            <Button Content="🏠 الرئيسية"/>
+
+            <Button Content="📦 الأصناف"/>
+
+            <Button Content="👥 العملاء"/>
+
+            <Button Content="🚚 الموردون"/>
+
+            <Button Content="🧾 المبيعات"/>
+
+            <Button Content="🛒 المشتريات"/>
+
+            <Button Content="💰 الخزنة"/>
+
+            <Button Content="📊 التقارير"/>
+
+            <Button Content="⚙️ الإعدادات"/>
+
+        </StackPanel>
+
+    </Border>
+
+    <ContentControl
+        Content="{Binding CurrentView}"/>
+
+</DockPanel>
