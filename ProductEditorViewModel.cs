@@ -39,3 +39,12 @@ public partial class ProductEditorViewModel : ObservableObject
 
     public event EventHandler? CloseRequested;
 }
+[RelayCommand]
+private void AddProduct()
+{
+    var window = new ProductEditorView();
+
+    window.ShowDialog();
+
+    _ = LoadAsync();
+}
