@@ -1,17 +1,15 @@
-public async Task AddAsync(Product product)
+using ChemStore.Core.Entities;
+using ChemStore.Data;
+using Microsoft.EntityFrameworkCore;
+namespace ChemStore.Services;
+public class ProductService(AppDbContext db)
 {
-    if (string.IsNullOrWhiteSpace(product.Name))
-        throw new Exception("اسم الصنف مطلوب.");
-
-    if (string.IsNullOrWhiteSpace(product.Code))
-        throw new Exception("كود الصنف مطلوب.");
-
-    var exists = await _repository.GetByCodeAsync(product.Code);
-
-    if (exists != null)
-        throw new Exception("الكود مستخدم بالفعل.");
-
-    await _repository.AddAsync(product);
-
-    await _repository.SaveChangesAsync();
+    public Task<List<Product>> GetAllAsync() => db.Products.Where(x => !x.IsDeleted).OrderBy(x => x.Name).ToListAsync();
+    public async Task AddAsync(Product product)
+    {
+        if (string.IsNullOrWhiteSpace(product.Code)) throw new ArgumentException("كود الصنف مطلوب");
+        if (string.IsNullOrWhiteSpace(product.Name)) throw new ArgumentException("اسم الصنف مطلوب");
+        db.Products.Add(product);
+        await db.SaveChangesAsync();
+    }
 }
